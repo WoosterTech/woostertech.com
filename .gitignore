@@ -11,3 +11,11 @@ hugo.linux
 
 # Temporary lock file while building
 /.hugo_build.lock
+
+# From `hero` theme
+.DS_Store
+node_modules
+.idea
+public
+resources
+local_git_config.sh
