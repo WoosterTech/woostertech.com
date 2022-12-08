@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/25b938b5-b0dc-4c51-98ff-d56572ce5547/deploy-status)](https://app.netlify.com/sites/incredible-mooncake-e3e381/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f243df11-2276-4d8f-be56-936f6aa7c0ea/deploy-status)](https://app.netlify.com/sites/woostertech/deploys)
 
 # Hugo Hero Theme
 
