@@ -25,7 +25,14 @@
 {{ $headless := .Site.GetPage "/homepage" }}
 {{ $reusablePages := $headless.Resources.ByType "page" }}
 {{ $reusablePages := sort $reusablePages ".Params.weight" }}
-{{ range first 1 $reusablePages }}
+
+<div id="home" class="strip bg-cover bg-position-top bg-overlay"
+  style="background-image: url('{{ .Params.background | relURL }}');">
+  <h1>Under Construction</h1>
+  <h2>Contact Us at <a href="mailto:info@woostertech.com">info@woostertech.com</a> or <a href="tel:+15097952374">(509)
+      795-2374</a>.</h2>
+</div>
+<!-- {{ range first 1 $reusablePages }}
 <div id="home" class="strip bg-cover bg-position-top bg-overlay"
   style="background-image: url('{{ .Params.background | relURL }}');">
   <div class="container pt-17 pb-17">
@@ -38,9 +45,9 @@
     </div>
   </div>
 </div>
-{{ end }}
+{{ end }} -->
 
-{{ $services := where (where .Site.RegularPages "Type" "services") ".Params.featured" true }}
+<!-- {{ $services := where (where .Site.RegularPages "Type" "services") ".Params.featured" true }}
 {{if gt (len $services) 0}}
 <div class="container pt-8 pb-8 pb-md-14 pt-md-14">
   <div class="row justify-content-start">
@@ -57,9 +64,9 @@
     </div>
   </div>
 </div>
-{{end}}
+{{end}} -->
 
-{{ range first 1 (after 1 $reusablePages) }}
+<!-- {{ range first 1 (after 1 $reusablePages) }}
 <div id="home" class="strip bg-primary bg-cover bg-position-top bg-overlay"
   style='background-image: url("{{ .Params.background | relURL }}");'>
   <div class="container pt-8 pb-8 pb-md-12 pt-md-12">
@@ -72,7 +79,7 @@
     </div>
   </div>
 </div>
-{{ end }}
+{{ end }} -->
 
 {{ end }}
 
