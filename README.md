@@ -1,5 +1,9 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f243df11-2276-4d8f-be56-936f6aa7c0ea/deploy-status)](https://app.netlify.com/sites/woostertech/deploys)
 
+`{{< netlify/imgproc image_name Fit "500" caption > }}`
+
+`hugo new --kind blog-bundle blog/title`
+
 # Hugo Hero Theme
 
 Hero is a multi-page business theme with fullscreen hero images and fullwidth sections.
