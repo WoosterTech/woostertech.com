@@ -56,8 +56,3 @@ theme = "hugo-hero-theme"
   post = "/:year/:month/:day/:slug/"
   blog = "/:year/:month/:slug/"
   pages = "/:filename/"
-
-[[redirects]]
-  from = "/*"
-  to = "/404"
-  status = 404
