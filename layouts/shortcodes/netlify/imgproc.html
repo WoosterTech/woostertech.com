@@ -1,0 +1,23 @@
+{{ $original := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
+{{ $command := .Get 1 }}
+{{ $options := .Get 2 }}
+{{ if eq $command "Fit"}}
+	{{ .Scratch.Set "style" ("fit") }}
+{{ else if eq $command "Crop"}}
+	{{ .Scratch.Set "style" ("smartcrop") }}
+{{ else }}
+	{{ errorf "imgproc: Invalid image processing command: Must be Fit or Crop."}}
+{{ end }}
+{{ $style := .Scratch.Get "style" }}
+<figure style="padding: 4px; margin: auto">
+	<img style="max-width: 100%; width: auto; height: auto;" src="{{ $original.RelPermalink }}?nf_resize={{ $style }}&w={{ $options }}">
+	<figcaption>
+		<small>
+			{{ with .Inner }}
+				{{ . }}
+			{{ else }}
+				.{{ $command }} "{{ $options }}"
+			{{ end }}
+		</small>
+	</figcaption>
+</figure>
