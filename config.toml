@@ -1,4 +1,4 @@
-baseURL = "https://woostertech.netlify.app/"
+baseURL = "https://woostertech.com/"
 languageCode = "en-us"
 title = "Wooster Technical Solutions"
 themesDir = "themes"
@@ -56,3 +56,8 @@ theme = "hugo-hero-theme"
   post = "/:year/:month/:day/:slug/"
   blog = "/:year/:month/:slug/"
   pages = "/:filename/"
+
+[[redirects]]
+  from = "/*"
+  to = "/404"
+  status = 404
