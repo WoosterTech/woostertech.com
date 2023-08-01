@@ -22,3 +22,5 @@ local_git_config.sh
 
 # Local Netlify folder
 .netlify
+
+node_modules
