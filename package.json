@@ -1,0 +1,24 @@
+{
+  "name": "woostertech.com",
+  "version": "1.0.0",
+  "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/f243df11-2276-4d8f-be56-936f6aa7c0ea/deploy-status)](https://app.netlify.com/sites/woostertech/deploys)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WoosterTech/woostertech.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WoosterTech/woostertech.com/issues"
+  },
+  "homepage": "https://github.com/WoosterTech/woostertech.com#readme",
+  "dependencies": {
+    "@tinacms/cli": "^1.5.26",
+    "tinacms": "^1.5.17"
+  }
+}
