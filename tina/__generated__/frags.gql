@@ -1,0 +1,9 @@
+fragment PostParts on Post {
+  title
+  body
+}
+
+fragment BlogParts on Blog {
+  title
+  body
+}
