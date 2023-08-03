@@ -1,11 +1,11 @@
 ---
-title: "DialogResult and the Cancel Button"
-date: 2021-05-19T21:12:58+00:00
-author: karl
+title: DialogResult and the Cancel Button
+date: 2021-05-19T21:12:58.000Z
+author: authors/karl.md
 draft: false
-heroHeading: "DialogResult and the Cancel Button"
-heroSubHeading: "Issues with C# dialogs"
-heroBackground: "blog/DialogResult.png"
+heroHeading: DialogResult and the Cancel Button
+heroSubHeading: Issues with C# dialogs
+heroBackground: blog/DialogResult.png
 ---
 
 Cancel buttons can be an important part of working with forms. If no `DialogResult` is set, the form will close but the calling code will continue unhindered.

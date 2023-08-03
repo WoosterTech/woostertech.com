@@ -20,9 +20,16 @@ var config_default = defineConfig({
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
-        path: "content/posts",
+        name: "blog",
+        label: "Blog",
+        path: "content/blog",
+        defaultItem: () => {
+          return {
+            author: "authors/karl.md",
+            draft: true,
+            date: (/* @__PURE__ */ new Date()).toISOString()
+          };
+        },
         fields: [
           {
             type: "string",
@@ -32,30 +39,78 @@ var config_default = defineConfig({
             required: true
           },
           {
+            type: "string",
+            name: "heroHeading",
+            label: "Hero Heading",
+            description: 'Typically copy-paste of "Title"'
+          },
+          {
+            type: "string",
+            name: "heroSubHeading",
+            label: "Sub Heading"
+          },
+          {
+            type: "image",
+            label: "Hero image",
+            name: "heroBackground"
+          },
+          {
+            label: "Author",
+            name: "author",
+            type: "reference",
+            collections: ["author"]
+          },
+          {
+            type: "datetime",
+            label: "Date",
+            name: "date"
+          },
+          {
+            label: "Draft",
+            name: "draft",
+            type: "boolean"
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Body",
-            isBody: true
+            isBody: true,
+            templates: [
+              {
+                name: "netlify_imgproc",
+                nameOverride: "netlify/imgproc",
+                label: "Netlify Processed Image",
+                match: {
+                  start: "{{",
+                  end: "}}"
+                },
+                fields: [
+                  {
+                    name: "filename",
+                    label: "File Name",
+                    type: "string",
+                    required: true
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       {
-        name: "blog",
-        label: "blog",
-        path: "content/blog",
+        label: "Author",
+        name: "author",
+        path: "authors",
         fields: [
           {
-            type: "string",
-            name: "title",
-            label: "Title",
-            isTitle: true,
-            required: true
+            label: "Name",
+            name: "name",
+            type: "string"
           },
           {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true
+            label: "Avatar",
+            name: "avatar",
+            type: "string"
           }
         ]
       }

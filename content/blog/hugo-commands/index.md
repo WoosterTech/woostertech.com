@@ -1,10 +1,11 @@
 ---
-title: "Hugo Commands"
-date: 2022-11-30T08:10:00-07:00
+title: Hugo Commands
+date: 2022-11-30T15:10:00.000Z
 draft: false
-heroHeading: 'Hugo Commands'
-heroSubHeading: 'Common Hugo Commands'
-heroBackground: 'services/service2.jpg'
+heroHeading: Hugo Commands
+heroSubHeading: Common Hugo Commands
+heroBackground: services/service2.jpg
+author: authors/karl.md
 ---
 
 I can never seem to remember how I've setup Hugo and what that command is for

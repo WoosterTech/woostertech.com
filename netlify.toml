@@ -1,7 +1,3 @@
-[build]
-publish = "public"
-command = "hugo --gc --minify"
-
 # [[plugins]]
 # package = "netlify-plugin-hugo-cache-resources"
 

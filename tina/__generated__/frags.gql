@@ -1,9 +1,31 @@
-fragment PostParts on Post {
+fragment BlogParts on Blog {
   title
+  heroHeading
+  heroSubHeading
+  heroBackground
+  author {
+    ... on Author {
+      name
+      avatar
+    }
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+  }
+  date
+  draft
   body
 }
 
-fragment BlogParts on Blog {
-  title
-  body
+fragment AuthorParts on Author {
+  name
+  avatar
 }

@@ -53,15 +53,15 @@ type Query {
   collections: [Collection!]!
   node(id: String): Node!
   document(collection: String, relativePath: String): DocumentNode!
-  post(relativePath: String): Post!
-  postConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PostFilter): PostConnection!
   blog(relativePath: String): Blog!
   blogConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: BlogFilter): BlogConnection!
+  author(relativePath: String): Author!
+  authorConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: AuthorFilter): AuthorConnection!
 }
 
 input DocumentFilter {
-  post: PostFilter
   blog: BlogFilter
+  author: AuthorFilter
 }
 
 type DocumentConnectionEdges {
@@ -87,10 +87,18 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Post | Blog | Folder
+union DocumentNode = Blog | Author | Folder
 
-type Post implements Node & Document {
+union BlogAuthor = Author
+
+type Blog implements Node & Document {
   title: String!
+  heroHeading: String
+  heroSubHeading: String
+  heroBackground: String
+  author: BlogAuthor
+  date: String
+  draft: Boolean
   body: JSON
   id: ID!
   _sys: SystemInfo!
@@ -104,39 +112,47 @@ input StringFilter {
   in: [String]
 }
 
-input RichTextFilter {
+input ImageFilter {
   startsWith: String
   eq: String
   exists: Boolean
+  in: [String]
 }
 
-input PostFilter {
-  title: StringFilter
-  body: RichTextFilter
+input BlogAuthorFilter {
+  author: AuthorFilter
 }
 
-type PostConnectionEdges {
-  cursor: String!
-  node: Post
+input DatetimeFilter {
+  after: String
+  before: String
+  eq: String
+  exists: Boolean
+  in: [String]
 }
 
-type PostConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [PostConnectionEdges]
+input BooleanFilter {
+  eq: Boolean
+  exists: Boolean
 }
 
-type Blog implements Node & Document {
-  title: String!
-  body: JSON
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
+input BlogBodyNetlify_imgprocFilter {
+  filename: StringFilter
+}
+
+input BlogBodyFilter {
+  netlify_imgproc: BlogBodyNetlify_imgprocFilter
 }
 
 input BlogFilter {
   title: StringFilter
-  body: RichTextFilter
+  heroHeading: StringFilter
+  heroSubHeading: StringFilter
+  heroBackground: ImageFilter
+  author: BlogAuthorFilter
+  date: DatetimeFilter
+  draft: BooleanFilter
+  body: BlogBodyFilter
 }
 
 type BlogConnectionEdges {
@@ -150,36 +166,66 @@ type BlogConnection implements Connection {
   edges: [BlogConnectionEdges]
 }
 
+type Author implements Node & Document {
+  name: String
+  avatar: String
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input AuthorFilter {
+  name: StringFilter
+  avatar: StringFilter
+}
+
+type AuthorConnectionEdges {
+  cursor: String!
+  node: Author
+}
+
+type AuthorConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [AuthorConnectionEdges]
+}
+
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentUpdateMutation!): DocumentNode!
   deleteDocument(collection: String, relativePath: String!): DocumentNode!
   createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
-  updatePost(relativePath: String!, params: PostMutation!): Post!
-  createPost(relativePath: String!, params: PostMutation!): Post!
   updateBlog(relativePath: String!, params: BlogMutation!): Blog!
   createBlog(relativePath: String!, params: BlogMutation!): Blog!
+  updateAuthor(relativePath: String!, params: AuthorMutation!): Author!
+  createAuthor(relativePath: String!, params: AuthorMutation!): Author!
 }
 
 input DocumentUpdateMutation {
-  post: PostMutation
   blog: BlogMutation
+  author: AuthorMutation
   relativePath: String
 }
 
 input DocumentMutation {
-  post: PostMutation
   blog: BlogMutation
-}
-
-input PostMutation {
-  title: String
-  body: JSON
+  author: AuthorMutation
 }
 
 input BlogMutation {
   title: String
+  heroHeading: String
+  heroSubHeading: String
+  heroBackground: String
+  author: String
+  date: String
+  draft: Boolean
   body: JSON
+}
+
+input AuthorMutation {
+  name: String
+  avatar: String
 }
 
 schema {

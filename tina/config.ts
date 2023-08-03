@@ -1,3 +1,4 @@
+import { string } from "prop-types";
 import { defineConfig } from "tinacms";
 
 // Your hosting provider likely exposes this as an environment variable
@@ -21,9 +22,16 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
-        path: "content/posts",
+        name: "blog",
+        label: "Blog",
+        path: "content/blog",
+        defaultItem: () => {
+          return {
+            author: "authors/karl.md",
+            draft: true,
+            date: new Date().toISOString(),
+          }
+        },
         fields: [
           {
             type: "string",
@@ -33,33 +41,81 @@ export default defineConfig({
             required: true,
           },
           {
+            type: "string",
+            name: "heroHeading",
+            label: "Hero Heading",
+            description: "Typically copy-paste of \"Title\"",
+          },
+          {
+            type: "string",
+            name: "heroSubHeading",
+            label: "Sub Heading",
+          },
+          {
+            type: 'image',
+            label: 'Hero image',
+            name: 'heroBackground',
+          },
+          {
+            label: "Author",
+            name: "author",
+            type: "reference",
+            collections: ["author"],
+          },
+          {
+            type: "datetime",
+            label: "Date",
+            name: "date",
+          },
+          {
+            label: "Draft",
+            name: "draft",
+            type: "boolean",
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Body",
             isBody: true,
+            templates: [
+              {
+                name: 'netlify_imgproc',
+                nameOverride: 'netlify/imgproc',
+                label: 'Netlify Processed Image',
+                match: {
+                  start: '{{',
+                  end: '}}',
+                },
+                fields: [
+                  {
+                    name: "filename",
+                    label: "File Name",
+                    type: 'string',
+                    required: true,
+                  },
+                ],
+              },
+            ]
+          }
+        ]
+      },
+      {
+        label: "Author",
+        name: 'author',
+        path: 'authors',
+        fields: [
+          {
+            label: "Name",
+            name: "name",
+            type: "string",
+          },
+          {
+            label: "Avatar",
+            name: "avatar",
+            type: "string",
           },
         ],
       },
-      {
-        name: "blog",
-        label: "blog",
-        path: "content/blog",
-        fields: [
-          {
-            type: "string",
-            name: "title",
-            label: "Title",
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
-          }
-        ]
-      }
     ],
   },
 });
