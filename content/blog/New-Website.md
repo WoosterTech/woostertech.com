@@ -5,7 +5,7 @@ heroSubHeading: No more WordPress; Hugo and Netlify FTW!
 heroBackground: /blog//time-for-a-change-897441_1280.jpg
 author: authors/karl.md
 date: 2023-08-03T22:25:53.060Z
-draft: true
+draft: false
 ---
 
 *Image by [Alexa](https://pixabay.com/users/alexas_fotos-686414/?utm_source=link-attribution\&utm_medium=referral\&utm_campaign=image\&utm_content=897441) from [Pixabay](https://pixabay.com//?utm_source=link-attribution\&utm_medium=referral\&utm_campaign=image\&utm_content=897441)*
