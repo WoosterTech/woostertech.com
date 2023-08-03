@@ -4,7 +4,7 @@ heroHeading: MS SQL Express Static Port
 heroSubHeading: Change from "dynamic" to "static" port.
 author: authors/karl.md
 date: 2022-03-17T07:00:00.000Z
-draft: true
+draft: false
 heroBackground: /blog/5.png
 ---
 
