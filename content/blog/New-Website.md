@@ -16,7 +16,7 @@ For those that aren't familiar with Hugo or Netlify, or are just curious, here's
 
 ## What is WordPress
 
-I expect most anyone that finds themselves on my website or blog is at least aware of WordPress, but for those that aren't, it's a very, very, very popular "content management system," often abbreviated as CMS. A phenomenal proportion of websites/blogs/anything use it. There are certainly advantages to that:
+I expect most anyone that finds themselves on my website or blog is at least aware of WordPress, but for those that aren't, it's a very, *very*, ***very*** popular "content management system," often abbreviated as CMS. A phenomenal proportion of websites/blogs/anything use it. There are certainly advantages to that:
 
 - Huge community
 - Nearly limitless plugins/add-ons to do anything
