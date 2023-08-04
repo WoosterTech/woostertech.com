@@ -71,6 +71,18 @@ var config_default = defineConfig({
             type: "boolean"
           },
           {
+            label: "Categories",
+            name: "categories",
+            type: "string",
+            list: true
+          },
+          {
+            label: "Tags",
+            name: "tags",
+            type: "string",
+            list: true
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Body",

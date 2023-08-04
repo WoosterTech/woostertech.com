@@ -22,6 +22,8 @@ fragment BlogParts on Blog {
   }
   date
   draft
+  categories
+  tags
   body
 }
 

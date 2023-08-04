@@ -99,6 +99,8 @@ type Blog implements Node & Document {
   author: BlogAuthor
   date: String
   draft: Boolean
+  categories: [String]
+  tags: [String]
   body: JSON
   id: ID!
   _sys: SystemInfo!
@@ -152,6 +154,8 @@ input BlogFilter {
   author: BlogAuthorFilter
   date: DatetimeFilter
   draft: BooleanFilter
+  categories: StringFilter
+  tags: StringFilter
   body: BlogBodyFilter
 }
 
@@ -220,6 +224,8 @@ input BlogMutation {
   author: String
   date: String
   draft: Boolean
+  categories: [String]
+  tags: [String]
   body: JSON
 }
 

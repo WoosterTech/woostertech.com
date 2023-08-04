@@ -6,6 +6,12 @@ heroBackground: /blog/password-2781614_640.jpg
 author: authors/karl.md
 date: 2022-01-25T08:00:00.000Z
 draft: false
+categories:
+  - SOLIDWORKS PDM
+tags:
+  - administration
+  - pdm
+  - solidworks
 ---
 
 If the default administrator password is forgotten, here is a guide on how to recover it:

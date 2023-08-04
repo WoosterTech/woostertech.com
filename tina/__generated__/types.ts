@@ -193,6 +193,8 @@ export type Blog = Node & Document & {
   author?: Maybe<BlogAuthor>;
   date?: Maybe<Scalars['String']['output']>;
   draft?: Maybe<Scalars['Boolean']['output']>;
+  categories?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   body?: Maybe<Scalars['JSON']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
@@ -246,6 +248,8 @@ export type BlogFilter = {
   author?: InputMaybe<BlogAuthorFilter>;
   date?: InputMaybe<DatetimeFilter>;
   draft?: InputMaybe<BooleanFilter>;
+  categories?: InputMaybe<StringFilter>;
+  tags?: InputMaybe<StringFilter>;
   body?: InputMaybe<BlogBodyFilter>;
 };
 
@@ -371,6 +375,8 @@ export type BlogMutation = {
   author?: InputMaybe<Scalars['String']['input']>;
   date?: InputMaybe<Scalars['String']['input']>;
   draft?: InputMaybe<Scalars['Boolean']['input']>;
+  categories?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
@@ -379,7 +385,7 @@ export type AuthorMutation = {
   avatar?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type BlogPartsFragment = { __typename?: 'Blog', title: string, heroHeading?: string | null, heroSubHeading?: string | null, heroBackground?: string | null, date?: string | null, draft?: boolean | null, body?: any | null, author?: { __typename?: 'Author', name?: string | null, avatar?: string | null, id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null };
+export type BlogPartsFragment = { __typename?: 'Blog', title: string, heroHeading?: string | null, heroSubHeading?: string | null, heroBackground?: string | null, date?: string | null, draft?: boolean | null, categories?: Array<string | null> | null, tags?: Array<string | null> | null, body?: any | null, author?: { __typename?: 'Author', name?: string | null, avatar?: string | null, id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null };
 
 export type AuthorPartsFragment = { __typename?: 'Author', name?: string | null, avatar?: string | null };
 
@@ -388,7 +394,7 @@ export type BlogQueryVariables = Exact<{
 }>;
 
 
-export type BlogQuery = { __typename?: 'Query', blog: { __typename?: 'Blog', id: string, title: string, heroHeading?: string | null, heroSubHeading?: string | null, heroBackground?: string | null, date?: string | null, draft?: boolean | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, author?: { __typename?: 'Author', name?: string | null, avatar?: string | null, id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } };
+export type BlogQuery = { __typename?: 'Query', blog: { __typename?: 'Blog', id: string, title: string, heroHeading?: string | null, heroSubHeading?: string | null, heroBackground?: string | null, date?: string | null, draft?: boolean | null, categories?: Array<string | null> | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, author?: { __typename?: 'Author', name?: string | null, avatar?: string | null, id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } };
 
 export type BlogConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -400,7 +406,7 @@ export type BlogConnectionQueryVariables = Exact<{
 }>;
 
 
-export type BlogConnectionQuery = { __typename?: 'Query', blogConnection: { __typename?: 'BlogConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BlogConnectionEdges', cursor: string, node?: { __typename?: 'Blog', id: string, title: string, heroHeading?: string | null, heroSubHeading?: string | null, heroBackground?: string | null, date?: string | null, draft?: boolean | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, author?: { __typename?: 'Author', name?: string | null, avatar?: string | null, id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null } | null> | null } };
+export type BlogConnectionQuery = { __typename?: 'Query', blogConnection: { __typename?: 'BlogConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BlogConnectionEdges', cursor: string, node?: { __typename?: 'Blog', id: string, title: string, heroHeading?: string | null, heroSubHeading?: string | null, heroBackground?: string | null, date?: string | null, draft?: boolean | null, categories?: Array<string | null> | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, author?: { __typename?: 'Author', name?: string | null, avatar?: string | null, id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null } | null> | null } };
 
 export type AuthorQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -446,6 +452,8 @@ export const BlogPartsFragmentDoc = gql`
   }
   date
   draft
+  categories
+  tags
   body
 }
     `;
