@@ -14,6 +14,8 @@ tags:
   - ip cams
 ---
 
+Image by [Chris](https://pixabay.com/users/chrisjmit-248609/?utm_source=link-attribution\&utm_medium=referral\&utm_campaign=image\&utm_content=834173) from [Pixabay](https://pixabay.com//?utm_source=link-attribution\&utm_medium=referral\&utm_campaign=image\&utm_content=834173)
+
 ## I Stole These
 
 Literally a copy-paste from [Blue Iris URLs for external streams](https://ipcamtalk.com/threads/blue-iris-urls-for-external-streams.24994/post-238524):
