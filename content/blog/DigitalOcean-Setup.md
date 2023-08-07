@@ -4,7 +4,7 @@ heroHeading: DigitalOcean Setup
 heroSubHeading: Get a Ubuntu 22.04 server setup for git and docker compose
 author: authors/karl.md
 date: 2023-08-07T19:12:48.046Z
-draft: true
+draft: false
 categories:
   - How-To
 tags:
