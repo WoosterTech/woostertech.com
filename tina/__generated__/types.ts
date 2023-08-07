@@ -232,12 +232,10 @@ export type BooleanFilter = {
   exists?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-export type BlogBodyNetlify_ImgprocFilter = {
-  filename?: InputMaybe<StringFilter>;
-};
-
-export type BlogBodyFilter = {
-  netlify_imgproc?: InputMaybe<BlogBodyNetlify_ImgprocFilter>;
+export type RichTextFilter = {
+  startsWith?: InputMaybe<Scalars['String']['input']>;
+  eq?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export type BlogFilter = {
@@ -250,7 +248,7 @@ export type BlogFilter = {
   draft?: InputMaybe<BooleanFilter>;
   categories?: InputMaybe<StringFilter>;
   tags?: InputMaybe<StringFilter>;
-  body?: InputMaybe<BlogBodyFilter>;
+  body?: InputMaybe<RichTextFilter>;
 };
 
 export type BlogConnectionEdges = {

@@ -89,19 +89,21 @@ var config_default = defineConfig({
             isBody: true,
             templates: [
               {
-                name: "netlify_imgproc",
-                nameOverride: "netlify/imgproc",
-                label: "Netlify Processed Image",
+                name: "WarningCallout",
+                label: "WarningCallout",
                 match: {
                   start: "{{",
                   end: "}}"
                 },
                 fields: [
                   {
-                    name: "filename",
-                    label: "File Name",
+                    name: "content",
+                    label: "Content",
                     type: "string",
-                    required: true
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
                   }
                 ]
               }
