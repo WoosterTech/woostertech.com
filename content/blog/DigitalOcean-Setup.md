@@ -69,8 +69,8 @@ sudo docker run hello-world
 
 ### Install Plugin
 
+Should already be installed with [Docker Engine](#install-docker-engine) above.
+
 ```shell
-sudo update
-sudo apt install docker-compose-plugin
 docker compose version
 ```
