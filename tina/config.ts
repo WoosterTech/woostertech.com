@@ -3,11 +3,14 @@ import { defineConfig } from "tinacms";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
+const client_id = process.env.TINA_CLIENT_ID
+const token = process.env.TINA_TOKEN
+const search_token = process.env.TINA_SEARCH_TOKEN
 
 export default defineConfig({
   branch,
-  clientId: "7d4a0a9f-6c67-4b2a-8e50-3ddb43043ebf", // Get this from tina.io
-  token: "699d3a03a4989b32de118ab6051433661baab097", // Get this from tina.io
+  clientId: client_id,
+  token: token,
 
   build: {
     outputFolder: "admin",
@@ -18,6 +21,14 @@ export default defineConfig({
       mediaRoot: "",
       publicFolder: "static",
     },
+  },
+  search: {
+    tina: {
+      indexerToken: search_token,
+      stopwordLanguages: ['eng'],  
+    },
+    indexBatchSize: 100,
+    maxSearchIndexFieldLength: 100
   },
   schema: {
     collections: [
