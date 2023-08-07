@@ -1,12 +1,13 @@
 // tina/config.ts
 import { defineConfig } from "tinacms";
 var branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
+var client_id = process.env.TINA_CLIENT_ID;
+var token = process.env.TINA_TOKEN;
+var search_token = process.env.TINA_SEARCH_TOKEN;
 var config_default = defineConfig({
   branch,
-  clientId: "7d4a0a9f-6c67-4b2a-8e50-3ddb43043ebf",
-  // Get this from tina.io
-  token: "699d3a03a4989b32de118ab6051433661baab097",
-  // Get this from tina.io
+  clientId: client_id,
+  token,
   build: {
     outputFolder: "admin",
     publicFolder: "static"
@@ -16,6 +17,14 @@ var config_default = defineConfig({
       mediaRoot: "",
       publicFolder: "static"
     }
+  },
+  search: {
+    tina: {
+      indexerToken: search_token,
+      stopwordLanguages: ["eng"]
+    },
+    indexBatchSize: 100,
+    maxSearchIndexFieldLength: 100
   },
   schema: {
     collections: [
@@ -89,21 +98,39 @@ var config_default = defineConfig({
             isBody: true,
             templates: [
               {
-                name: "WarningCallout",
-                label: "WarningCallout",
+                name: "netlify_imgproc",
+                nameOverride: "netlify/imgproc",
+                label: "image processing",
                 match: {
-                  start: "{{",
-                  end: "}}"
+                  start: "{{<",
+                  end: ">}}"
                 },
                 fields: [
                   {
-                    name: "content",
-                    label: "Content",
+                    name: "_value",
+                    label: "filename",
                     type: "string",
                     required: true,
                     ui: {
                       component: "textarea"
                     }
+                  },
+                  {
+                    name: "command",
+                    label: "Command",
+                    type: "string",
+                    required: true
+                  },
+                  {
+                    name: "options",
+                    label: "Options",
+                    type: "string",
+                    required: true
+                  },
+                  {
+                    name: "children",
+                    type: "rich-text",
+                    label: "Caption"
                   }
                 ]
               }

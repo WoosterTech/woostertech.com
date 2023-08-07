@@ -25,7 +25,7 @@ export default defineConfig({
   search: {
     tina: {
       indexerToken: search_token,
-      stopwordLanguages: ['eng'],  
+      stopwordLanguages: ['eng'],
     },
     indexBatchSize: 100,
     maxSearchIndexFieldLength: 100
@@ -102,22 +102,40 @@ export default defineConfig({
             isBody: true,
             templates: [
               {
-                name: 'WarningCallout',
-                label: 'WarningCallout',
+                name: 'netlify_imgproc',
+                nameOverride: "netlify\/imgproc",
+                label: 'image processing',
                 match: {
-                  start: '{{',
-                  end: '}}',
+                  start: '{{<',
+                  end: '>}}',
                 },
                 fields: [
                   {
-                    name: "content",
-                    label: "Content",
+                    name: "_value",
+                    label: "filename",
                     type: 'string',
                     required: true,
                     ui: {
-                      component: 'textarea'
-                    }
-                  }
+                      component: 'textarea',
+                    },
+                  },
+                  {
+                    name: "command",
+                    label: "Command",
+                    type: "string",
+                    required: true,
+                  },
+                  {
+                    name: "options",
+                    label: "Options",
+                    type: "string",
+                    required: true,
+                  },
+                  {
+                    name: "children",
+                    type: "rich-text",
+                    label: "Caption"
+                  },
                 ],
               },
             ]

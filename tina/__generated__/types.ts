@@ -238,6 +238,17 @@ export type RichTextFilter = {
   exists?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+export type BlogBodyNetlify_ImgprocFilter = {
+  _value?: InputMaybe<StringFilter>;
+  command?: InputMaybe<StringFilter>;
+  options?: InputMaybe<StringFilter>;
+  children?: InputMaybe<RichTextFilter>;
+};
+
+export type BlogBodyFilter = {
+  netlify_imgproc?: InputMaybe<BlogBodyNetlify_ImgprocFilter>;
+};
+
 export type BlogFilter = {
   title?: InputMaybe<StringFilter>;
   heroHeading?: InputMaybe<StringFilter>;
@@ -248,7 +259,7 @@ export type BlogFilter = {
   draft?: InputMaybe<BooleanFilter>;
   categories?: InputMaybe<StringFilter>;
   tags?: InputMaybe<StringFilter>;
-  body?: InputMaybe<RichTextFilter>;
+  body?: InputMaybe<BlogBodyFilter>;
 };
 
 export type BlogConnectionEdges = {

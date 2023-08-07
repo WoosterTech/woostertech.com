@@ -144,6 +144,17 @@ input RichTextFilter {
   exists: Boolean
 }
 
+input BlogBodyNetlify_imgprocFilter {
+  _value: StringFilter
+  command: StringFilter
+  options: StringFilter
+  children: RichTextFilter
+}
+
+input BlogBodyFilter {
+  netlify_imgproc: BlogBodyNetlify_imgprocFilter
+}
+
 input BlogFilter {
   title: StringFilter
   heroHeading: StringFilter
@@ -154,7 +165,7 @@ input BlogFilter {
   draft: BooleanFilter
   categories: StringFilter
   tags: StringFilter
-  body: RichTextFilter
+  body: BlogBodyFilter
 }
 
 type BlogConnectionEdges {
