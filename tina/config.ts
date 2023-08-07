@@ -9,8 +9,8 @@ const search_token = process.env.TINA_SEARCH_TOKEN
 
 export default defineConfig({
   branch,
-  clientId: client_id
-  token: token
+  clientId: client_id,
+  token: token,
 
   build: {
     outputFolder: "admin",
