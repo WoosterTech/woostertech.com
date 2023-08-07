@@ -16,7 +16,7 @@ tags:
 heroBackground: /blog//abstract-2891890_1280.jpg
 ---
 
-Image by [3D Animation Production Company](https://pixabay.com/users/quincecreative-1031690/?utm_source=link-attribution\&utm_medium=referral\&utm_campaign=image\&utm_content=2891890) from [Pixabay](https://pixabay.com//?utm_source=link-attribution\&utm_medium=referral\&utm_campaign=image\&utm_content=2891890)
+*Image by [3D Animation Production Company](https://pixabay.com/users/quincecreative-1031690/?utm_source=link-attribution\&utm_medium=referral\&utm_campaign=image\&utm_content=2891890) from [Pixabay](https://pixabay.com//?utm_source=link-attribution\&utm_medium=referral\&utm_campaign=image\&utm_content=2891890)*
 
 ## Basic Steps
 
