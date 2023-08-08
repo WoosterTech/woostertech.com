@@ -144,15 +144,15 @@ input RichTextFilter {
   exists: Boolean
 }
 
-input BlogBodyNetlify_imgprocFilter {
-  _value: StringFilter
-  command: StringFilter
-  options: StringFilter
+input BlogBodyPimgprocFilter {
+  src: StringFilter
+  style: StringFilter
+  width: StringFilter
   children: RichTextFilter
 }
 
 input BlogBodyFilter {
-  netlify_imgproc: BlogBodyNetlify_imgprocFilter
+  pimgproc: BlogBodyPimgprocFilter
 }
 
 input BlogFilter {

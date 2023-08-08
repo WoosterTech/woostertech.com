@@ -98,17 +98,16 @@ var config_default = defineConfig({
             isBody: true,
             templates: [
               {
-                name: "netlify_imgproc",
-                nameOverride: "netlify/imgproc",
-                label: "image processing",
+                name: "pimgproc",
+                label: "Netlify Image Process | Page Resources",
                 match: {
                   start: "{{<",
                   end: ">}}"
                 },
                 fields: [
                   {
-                    name: "_value",
-                    label: "filename",
+                    name: "src",
+                    label: "Filename",
                     type: "string",
                     required: true,
                     ui: {
@@ -116,14 +115,14 @@ var config_default = defineConfig({
                     }
                   },
                   {
-                    name: "command",
-                    label: "Command",
+                    name: "style",
+                    label: "Style",
                     type: "string",
                     required: true
                   },
                   {
-                    name: "options",
-                    label: "Options",
+                    name: "width",
+                    label: "Width",
                     type: "string",
                     required: true
                   },

@@ -238,15 +238,15 @@ export type RichTextFilter = {
   exists?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-export type BlogBodyNetlify_ImgprocFilter = {
-  _value?: InputMaybe<StringFilter>;
-  command?: InputMaybe<StringFilter>;
-  options?: InputMaybe<StringFilter>;
+export type BlogBodyPimgprocFilter = {
+  src?: InputMaybe<StringFilter>;
+  style?: InputMaybe<StringFilter>;
+  width?: InputMaybe<StringFilter>;
   children?: InputMaybe<RichTextFilter>;
 };
 
 export type BlogBodyFilter = {
-  netlify_imgproc?: InputMaybe<BlogBodyNetlify_ImgprocFilter>;
+  pimgproc?: InputMaybe<BlogBodyPimgprocFilter>;
 };
 
 export type BlogFilter = {

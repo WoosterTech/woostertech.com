@@ -29,9 +29,9 @@ Use the git bash terminal for the following steps. PS and WSL don't seem to work
 
 This should launch a browser to authorize netlify with this setup:
 
-{{< netlify/imgproc "cli-authorize-ui" "Fit" "500" >}}
+{{< pimgproc src="cli-authorize-ui" style="Fit" width="500" >}}
 Authorization
-{{< /netlify/imgproc >}}
+{{< /pimgproc >}}
 
 1. Install [Netlify Credential Helper](https://github.com/netlify/netlify-credential-helper)
 

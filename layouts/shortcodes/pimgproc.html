@@ -1,22 +1,13 @@
-{{ $original := "" }}
-{{ $command := ""}}
-{{ $options := ""}}
-{{ if .IsNamedParams }}
 {{ $original := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
 {{ $command := .Get "style" }}
 {{ $options := .Get "width" }}
-{{ else }}
-{{ $original := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
-{{ $command := .Get 1 }}
-{{ $options := .Get 2 }}
-{{ end }}
 {{ if eq $command "Fit"}}
 {{ .Scratch.Set "style" ("fit") }}
 {{ else if eq $command "Crop"}}
 {{ .Scratch.Set "style" ("smartcrop") }}
 {{ else }}
-{{ errorf "imgproc: Invalid image teprocessing command: Must be Fit or Crop. [%v]"
-$command }}
+{{ errorf "imgproc: Invalid image processing command: Must be Fit or Crop. [%q]"
+$original }}
 {{ end }}
 {{ $style := .Scratch.Get "style" }}
 <figure style="padding: 4px; margin: auto">
