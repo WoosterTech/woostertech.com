@@ -4,6 +4,12 @@ title = "Wooster Technical Solutions"
 themesDir = "themes"
 theme = "hugo-hero-theme"
 
+[taxonomies]
+  tag = "tag"
+  category = "categories"
+  author = "authors"
+  building = "buildings"
+
 [module]
   [module.hugoVersion]
     extended = true
