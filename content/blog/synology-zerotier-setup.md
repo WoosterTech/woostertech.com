@@ -30,7 +30,7 @@ sudo -i
 Write script to `/usr/local/etc/rc.d/tun.sh` that will setup `/dev/net/tun` on startup
 
 ```shell
-echo -e '#!/bin/sh -e \ninsmod /lib/modules/tun.ko' &gt; /usr/local/etc/rc.d/tun.sh
+echo -e '#!/bin/sh -e \ninsmod /lib/modules/tun.ko' > /usr/local/etc/rc.d/tun.sh
 ```
 
 Set executable permissions on script
