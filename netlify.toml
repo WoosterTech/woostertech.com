@@ -35,3 +35,8 @@ HUGO_ENABLEGITINFO = "true"
   from = "/*"
   to = "/404/"
   status = 404
+
+[[redirects]]
+  from = "https://support.woostertech.com/*"
+  to = "https://desk.zoho.com/support/woostetech/:splat"
+  status = 301
