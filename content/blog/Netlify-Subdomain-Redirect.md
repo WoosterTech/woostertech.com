@@ -15,6 +15,8 @@ tags:
 
 *Image by [Mohamed Hassan](https://pixabay.com/users/mohamed_hassan-5229782/?utm_source=link-attribution\&utm_medium=referral\&utm_campaign=image\&utm_content=6038877) from [Pixabay](https://pixabay.com//?utm_source=link-attribution\&utm_medium=referral\&utm_campaign=image\&utm_content=6038877)*
 
+\*\*\*The theme I'm using in Hugo hides list numbers and bullets. Not sure why anyone would ever want that, but that's why the text after \[The Solution]\(#the-solution) is indented. If you were to inspect the code, you'd see that it's actually an ordered list, the numbers are just not visible. So, until I fix the theme...\*\*\*
+
 ## The "Why"
 
 I used to pay Zoho for their **Desk** product (I don't remember what level) that included a custom domain. This was also before my \[switch to Netlify]\({{ ref "/blog/new-website" }}) so my [https://support.woostertech.com](https://support.woostertech.com) URL was not going to work. I did have to have Zoho remove my domain entirely since my DNS settings weren't correct and I could no longer access the portal at all!
