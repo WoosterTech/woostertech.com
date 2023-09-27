@@ -19,7 +19,7 @@ tags:
 
 ## The "Why"
 
-I used to pay Zoho for their **Desk** product (I don't remember what level) that included a custom domain. This was also before my [switch to Netlify]({{ ref "/blog/new-website" }}) so my [https://support.woostertech.com](https://support.woostertech.com) URL was not going to work. I did have to have Zoho remove my domain entirely since my DNS settings weren't correct and I could no longer access the portal at all!
+I used to pay Zoho for their **Desk** product (I don't remember what level) that included a custom domain. This was also before my [switch to Netlify]({{< ref "/blog/new-website" >}}) so my [https://support.woostertech.com](https://support.woostertech.com) URL was not going to work. I did have to have Zoho remove my domain entirely since my DNS settings weren't correct and I could no longer access the portal at all!
 
 What I didn't want, however, was to have to give customers and clients the entire non-custom URL [https://desk.zoho.com/support/woostertech](https://desk.zoho.com/support/woostertech).
 
@@ -33,6 +33,6 @@ What I didn't want, however, was to have to give customers and clients the entir
 5. Drag-and-drop the entire folder, with the new file, into the Netlify "Deploy manually" page. This will create the page which *could* be accessed at their special subdomain, but that's unlikely, and could probably be blocked with some other trickery that I'm not interested in today.
 6. Add the custom domain under "Domain management." Netlify will recognize that the domain is already managed by them, so it will be more than happy to manage the subdomain.
 
-That should be all of it. It might take a minute for all of the DNS stuff to update properly and the certificate may need to be renewed to handle the new subdomain, but it should start working. Anytime someone tries to go [https://support.woostertech.com], they'll automatically be redirected.
+That should be all of it. It might take a minute for all of the DNS stuff to update properly and the certificate may need to be renewed to handle the new subdomain, but it should start working. Anytime someone tries to go [https://support.woostertech.com](https://support.woostertech.com), they'll automatically be redirected.
 
 That should be everything. Unless I think of something else...
