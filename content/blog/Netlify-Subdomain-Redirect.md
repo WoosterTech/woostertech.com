@@ -19,9 +19,9 @@ tags:
 
 ## The "Why"
 
-I used to pay Zoho for their **Desk** product (I don't remember what level) that included a custom domain. This was also before my \[switch to Netlify]\({{ ref "/blog/new-website" }}) so my [https://support.woostertech.com](https://support.woostertech.com) URL was not going to work. I did have to have Zoho remove my domain entirely since my DNS settings weren't correct and I could no longer access the portal at all!
+I used to pay Zoho for their **Desk** product (I don't remember what level) that included a custom domain. This was also before my [switch to Netlify]({{ ref "/blog/new-website" }}) so my [https://support.woostertech.com](https://support.woostertech.com) URL was not going to work. I did have to have Zoho remove my domain entirely since my DNS settings weren't correct and I could no longer access the portal at all!
 
-What I didn't want, however, was to have to give customers and clients the entire non-custom URL [https://desk.zoho.com/support/woostertech](https://desk.zoho.com/support/woostertech "https://desk.zoho.com/support/woostertech").
+What I didn't want, however, was to have to give customers and clients the entire non-custom URL [https://desk.zoho.com/support/woostertech](https://desk.zoho.com/support/woostertech).
 
 ## The Solution
 
