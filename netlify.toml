@@ -38,6 +38,6 @@ HUGO_ENABLEGITINFO = "true"
 
 [[redirects]]
   from = "https://support.woostertech.com/*"
-  to = "https://desk.zoho.com/support/woostertech/"
+  to = "https://desk.zoho.com"
   status = 301
   force = true
