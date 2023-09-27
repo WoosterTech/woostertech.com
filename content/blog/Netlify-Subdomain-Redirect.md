@@ -15,7 +15,7 @@ tags:
 
 *Image by [Mohamed Hassan](https://pixabay.com/users/mohamed_hassan-5229782/?utm_source=link-attribution\&utm_medium=referral\&utm_campaign=image\&utm_content=6038877) from [Pixabay](https://pixabay.com//?utm_source=link-attribution\&utm_medium=referral\&utm_campaign=image\&utm_content=6038877)*
 
-\*\*\*The theme I'm using in Hugo hides list numbers and bullets. Not sure why anyone would ever want that, but that's why the text after \[The Solution]\(#the-solution) is indented. If you were to inspect the code, you'd see that it's actually an ordered list, the numbers are just not visible. So, until I fix the theme...\*\*\*
+**The theme I'm using in Hugo hides list numbers and bullets. Not sure why anyone would ever want that, but that's why the text after [The Solution](#the-solution) is indented. If you were to inspect the code, you'd see that it's actually an ordered list, the numbers are just not visible. So, until I fix the theme...**
 
 ## The "Why"
 
